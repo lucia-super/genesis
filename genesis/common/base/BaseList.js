@@ -1,6 +1,5 @@
 import { mapState, mapActions } from 'vuex'
 import { cloneDeep, forEach } from 'lodash'
-import './index.scss'
 
 export default {
     name: 'BaseList',

@@ -1,6 +1,5 @@
 import { mapState, mapActions } from 'vuex'
 import { cloneDeep, forEach } from 'lodash'
-import './index.scss'
 
 export default {
     name: 'BaseList',
@@ -14,7 +13,7 @@ export default {
     },
     computed: {
         ...mapState({
-            list(state) {
+            detail(state) {
                 const modules = this.moduleType.split('/')
                 let currentListState = cloneDeep(state[modules[0]])
                 if (modules && modules.length > 1) { // 当在某个模块的非一级节点上时，需要根据模块名称一层层找到当前的state节点
@@ -24,12 +23,8 @@ export default {
                     })
                 }
                 return currentListState ? currentListState.list : {}
-            },
-            domainArea: state => state.global.domainArea
-        }),
-        pagination() { return this.list.pagination },
-        loading() { return this.list.loading || false },
-        listData() { return this.list.data || [] }
+            }
+        })
     },
 
     created() {
@@ -38,19 +33,14 @@ export default {
 
     methods: {
         ...mapActions({
-            fetchListData: function (dispatch, page = 1) {
+            fetchDetail: function (dispatch, page = 1) {
                 if (this.moduleType) {
-                    dispatch(`${this.moduleType}/fetchList`, {
+                    dispatch(`${this.moduleType}/fetchDetail`, {
                         payload: {
                             pagination: { page, size: this.pageSize },
                             conditions: this.conditions
                         }
                     })
-                }
-            },
-            setCurrent: function (dispatch, itemData) {
-                if (this.moduleType) {
-                    dispatch(`${this.moduleType}/setCurrent`, itemData)
                 }
             }
         }),

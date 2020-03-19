@@ -14,7 +14,7 @@ export default {
             // commit('SAVE_LISTDATA_PAGINATION_AND_CONDITIONS', { data, pagination, conditions: payload.conditions })
             commit('CHANGE_LIST_LOADING', false)
         },
-        fetchDetailData({ commit }) {
+        fetchDetail({ commit }) {
             commit('CHANGE_CURRENT_LOADING', true)
             // commit('SAVE_CURRENT_DETAIL', response)
             commit('CHANGE_CURRENT_LOADING', false)
