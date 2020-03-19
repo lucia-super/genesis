@@ -1,0 +1,11 @@
+{
+    "name": "genesis",
+    "storeFolder": "store",
+    "viewFolder": "screen",
+    "routerFolder": "router",
+    "modules": [{
+        "name": "school"
+    }, {
+        "name": "students"
+    }]
+}
