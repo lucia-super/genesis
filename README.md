@@ -1,29 +1,23 @@
-# genesis
+# genesis 创世纪
 
-## Project setup
-```
-npm install
-```
+## 项目目标
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+根据模型化开发设计理念，快速构建一个新的业务系统。
 
-### Compiles and minifies for production
-```
-npm run build
-```
+1. 配置一个模块名称，快速生成与此模型相关的数据模型，列表文件，增删改查方式
+2. 模型化开发，统一设置框架数据，比如样式，权限等，可以全局定制
+3. 可配置管理
+4. 定制化开发，如果需要不同的业务，在生成的文件结构上去修改增加业务
 
-### Run your tests
-```
-npm run test
-```
+适合各类管理系统。
 
-### Lints and fixes files
-```
-npm run lint
-```
+# 目标： 一个小时搭建一套后台管理系统。
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 目前这个只是一个雏形，如果你也感兴趣，请联系我添加你为开发者
+
+目前实现的功能：
+
+1. 根据配置生成对应的目录结构
+2. 基本的方法实现
+   a. 获取列表数据到页面
+   b. 获取详情数据到页面
