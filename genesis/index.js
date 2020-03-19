@@ -30,7 +30,8 @@ fs.readFile(__dirname + "/template/list.vue", (err, data) => {
         config.modules.forEach(element => {
             const folder = project_dirname + "/src/" + config.viewFolder + "/" + element.name
             fs.mkdir(folder, () => {
-                fs.writeFile(folder + "/list.vue", data, (err) => {
+                const preHandledData = data.replace("$placeholder", element.name);
+                fs.writeFile(folder + "/list.vue", preHandledData, (err) => {
                     console.log("create " + element.name + " list:" + err)
                 })
             })
@@ -41,8 +42,7 @@ fs.readFile(__dirname + "/template/list.vue", (err, data) => {
     }
 })
 
-copyIt(__dirname + "/common/reusable.js", project_dirname + "src");
-
+copyIt(__dirname + "/common/*", project_dirname + "src");
 function copyIt(from, to) {
     fs.writeFileSync(to, fs.readFileSync(from));
 }
