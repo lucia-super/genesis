@@ -2,7 +2,7 @@
   <div class="container" />
 </template>
 <script>
-  import baseList from "../base/BaseDetail";
+  import baseList from "../../base/BaseDetail";
 
   export default {
     methods: {

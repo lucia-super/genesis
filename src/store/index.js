@@ -6,10 +6,8 @@ Vue.use(Vuex)
 import home from "./home/index.js"
 
 // 创建Vuex的实例
-const store = new Vuex.Store({
+export default new Vuex.Store({
     modules: {
         home
     }
 })
-
-export default store

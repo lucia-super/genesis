@@ -1,4 +1,4 @@
-import { generateBaseListState, baseListMutations } from './reusable'
+import { generateBaseListState, baseListMutations } from '../../reusable'
 
 export default {
     namespaced: true,

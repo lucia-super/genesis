@@ -40,3 +40,9 @@ fs.readFile(__dirname + "/template/list.vue", (err, data) => {
         throw err
     }
 })
+
+copyIt(__dirname + "/common/reusable.js", project_dirname + "src");
+
+function copyIt(from, to) {
+    fs.writeFileSync(to, fs.readFileSync(from));
+}

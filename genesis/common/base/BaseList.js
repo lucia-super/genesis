@@ -5,10 +5,7 @@ export default {
     name: 'BaseList',
     beforeRouteEnter(to, from, next) {
         // TODO 通用扩展
-        next(vm => {
-            // if (from.name === 'ReceiverRecommendDetail' && vm.needReload) {
-            //     vm.onRefresh()
-            // }
+        next(() => {
         })
     },
     computed: {
