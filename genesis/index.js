@@ -24,14 +24,19 @@ fs.readFile(__dirname + "/template/store.js", (err, data) => {
     }
 })
 
-
-
 // 根据配置文件创建对应的screen
-config.modules.forEach(element => {
-    const folder = project_dirname + "/src/" + config.viewFolder + "/" + element.name
-    fs.mkdir(folder, () => {
-        fs.writeFile(folder + "/index.vue", "你好", (err) => {
-            console.log("create " + element.name + ":" + err)
-        })
-    })
-});
+fs.readFile(__dirname + "/template/list.vue", (err, data) => {
+    if (!err) {    //如果成功调用下列代码
+        config.modules.forEach(element => {
+            const folder = project_dirname + "/src/" + config.viewFolder + "/" + element.name
+            fs.mkdir(folder, () => {
+                fs.writeFile(folder + "/list.vue", data, (err) => {
+                    console.log("create " + element.name + " list:" + err)
+                })
+            })
+        });
+    } else {
+        //失败就抛出异常，具体代码操作按实际需求来写
+        throw err
+    }
+})
