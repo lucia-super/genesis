@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var fs = require('fs');
 const path = require("path");
 
@@ -43,24 +44,34 @@ fs.readFile(__dirname + "/template/list.vue", 'utf8', (err, data) => {
 })
 
 
-// const readline = require('readline');
-// const storeConfig = project_dirname + "/src/" + config.storeFolder + "/index.js"
-// const rl = readline.createInterface({
-//     input: fs.createReadStream(storeConfig),
-//     crlfDelay: Infinity
-// });
+const readline = require('readline');
+const storeConfig = project_dirname + "/src/" + config.storeFolder + "/index.js"
+const rl = readline.createInterface({
+    input: fs.createReadStream(storeConfig),
+    crlfDelay: Infinity
+});
 
-// let updateContent = "";
-// let markedImport = true;
-// rl.on('line', (line) => {
-//     updateContent += line;
-//     console.log(`${line}`);
-//     if (!markedImport) {
-//         config.modules.forEach(element => {
-//             updateContent += 'import ' + element.name + ' from "./' + element.name + '/index.js"'
-//         });
-//     }
-//     if (line.indexOf("import") > -1) {
-//         markedImport = false;
-//     }
-// });
+const importedComponents = [];
+let storeContent = ""
+rl.on('line', (line) => {
+    if (line.indexOf("import") > -1) {
+        importedComponents.push({ key: line.split(" ")[1], value: line })
+    }
+}).on('close', function () {
+    config.modules.forEach(element => {
+        if (_.filter(importedComponents, { key: element.name }).length === 0) {
+            importedComponents.push({ key: element.name, value: 'import ' + element.name + ' from "./' + element.name + '/index.js";' })
+        }
+    });
+
+    let importContent = "";
+    let exportContent = "";
+    _.forEach(importedComponents, (item) => {
+        importContent += item.value + "\n";
+        exportContent += item.key + ",\n";
+    })
+    const exportData = `export default { \n${exportContent}}`;
+    storeContent = importContent + exportData;
+    fs.writeFileSync(storeConfig, storeContent)
+    process.exit(0);
+});
