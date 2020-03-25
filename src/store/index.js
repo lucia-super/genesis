@@ -1,10 +1,8 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-Vue.use(Vuex)
-
-// modules
 import home from "./home/index.js"
-export default {
-    home
+import school from "./school/index.js";
+import students from "./students/index.js";
+export default { 
+home,
+school,
+students,
 }
-

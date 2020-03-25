@@ -4,6 +4,10 @@
     "viewFolder": "screen",
     "routerFolder": "router",
     "modules": [{
-        "name": "school"
+        "name": "school",
+        "update": true
+    }, {
+        "name": "students",
+        "update": false
     }]
 }

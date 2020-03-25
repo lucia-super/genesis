@@ -11,7 +11,9 @@ export default {
     actions: {
         fetchList({ commit }) {
             commit('CHANGE_LIST_LOADING', true)
-            // commit('SAVE_LISTDATA_PAGINATION_AND_CONDITIONS', { data, pagination, conditions: payload.conditions })
+            const data = [{ key: "template1", value: "1" }, { key: "template2", value: "2" }, { key: "template3", value: "4" }]
+            const pagination = 10
+            commit('SAVE_LISTDATA_PAGINATION_AND_CONDITIONS', { data, pagination })
             commit('CHANGE_LIST_LOADING', false)
         },
         fetchDetail({ commit }) {
