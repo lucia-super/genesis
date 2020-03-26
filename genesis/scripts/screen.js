@@ -1,8 +1,8 @@
 
 var _ = require('lodash');
 
-function writeScreen(fs, config, project_dirname) {
-    const data = fs.readFileSync(__dirname + "/../template/list.vue", 'utf8')
+function writeScreen(fs, config, project_dirname, genesis_dirname) {
+    const data = fs.readFileSync(genesis_dirname + "/template/list.vue", 'utf8')
     if (data) {
         config.modules.forEach(element => {
             const folder = project_dirname + "/src/" + config.viewFolder + "/" + element.name;
@@ -53,9 +53,7 @@ function writeScreenConfig(fs, config, project_dirname) {
         })
         const exportData = `export default [ \n${exportContent}]`;
         storeContent = importContent + exportData;
-        console.log(storeContent)
         fs.writeFileSync(screenConfig, storeContent)
-        console.log("222")
         process.exit(0);
     });
 }

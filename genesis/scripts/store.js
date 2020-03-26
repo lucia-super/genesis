@@ -1,8 +1,8 @@
 
 var _ = require('lodash');
 
-function writeStore(fs, config, project_dirname) {
-    const data = fs.readFileSync(__dirname + "/../template/store.js")
+function writeStore(fs, config, project_dirname, genesis_dirname) {
+    const data = fs.readFileSync(genesis_dirname + "/template/store.js")
     if (data) {
         config.modules.forEach(element => {
             const folder = project_dirname + "/src/" + config.storeFolder + "/" + element.name;
