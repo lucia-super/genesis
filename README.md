@@ -12,8 +12,9 @@
 适合各类管理系统。
 
 # 使用方式
----npm run come---
----npm run serve---
+
+***npm run come***
+***npm run serve***
 
 
 # 目标： 一个小时搭建一套后台管理系统。
