@@ -18,7 +18,7 @@ export default {
                         currentListState = currentListState[item]
                     })
                 }
-                return currentListState ? currentListState.list : {}
+                return currentListState ? currentListState.current.data : {}
             }
         })
     },

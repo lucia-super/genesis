@@ -1,4 +1,6 @@
 import home from "./home/index.js"
-export default {
-    home,
+import school from "./school/index.js";
+export default { 
+home,
+school,
 }
