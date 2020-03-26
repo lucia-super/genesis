@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    {{ detail }}
+    详情页面
   </div>
 </template>
 <script>
