@@ -25,8 +25,9 @@ function writeScreen(fs, config, project_dirname, genesis_dirname) {
 function writeScreenConfig(fs, config, project_dirname) {
     const readline = require('readline');
     const screenConfig = project_dirname + "/src/" + config.routerFolder + "/index.js"
+    const readStream = fs.createReadStream(screenConfig);
     const rl = readline.createInterface({
-        input: fs.createReadStream(screenConfig),
+        input: readStream,
         crlfDelay: Infinity,
         terminal: true
     });
@@ -54,7 +55,7 @@ function writeScreenConfig(fs, config, project_dirname) {
         const exportData = `export default [ \n${exportContent}]`;
         storeContent = importContent + exportData;
         fs.writeFileSync(screenConfig, storeContent)
-        process.exit(0);
+        readStream.destroy();
     });
 }
 

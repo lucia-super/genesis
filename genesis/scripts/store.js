@@ -23,8 +23,9 @@ function writeStore(fs, config, project_dirname, genesis_dirname) {
 function writeStoreConfig(fs, config, project_dirname, callback) {
     const readline = require('readline');
     const storeConfig = project_dirname + "/src/" + config.storeFolder + "/index.js"
+    const readStream = fs.createReadStream(storeConfig);
     const rl = readline.createInterface({
-        input: fs.createReadStream(storeConfig),
+        input: readStream,
         crlfDelay: Infinity
     });
 
@@ -51,7 +52,7 @@ function writeStoreConfig(fs, config, project_dirname, callback) {
         storeContent = importContent + exportData;
         fs.writeFileSync(storeConfig, storeContent);
         callback && callback();
-        process.exit(0);
+        readStream.destroy();
     });
 }
 
