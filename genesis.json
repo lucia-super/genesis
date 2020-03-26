@@ -7,9 +7,6 @@
     "hardCopyBase": false,
     "modules": [{
         "name": "school",
-        "update": true
-    }, {
-        "name": "students",
         "update": false
     }]
 }

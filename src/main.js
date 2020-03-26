@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
+import ElementUI from 'element-ui';
 
 import routerModules from '@/router'
 import storeModules from '@/store'
@@ -9,7 +10,7 @@ import App from './App.vue'
 
 Vue.use(Vuex)
 Vue.use(VueRouter)
-
+Vue.use(ElementUI);
 
 const store = new Vuex.Store({
   modules: storeModules
