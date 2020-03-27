@@ -8,5 +8,8 @@
     "modules": [{
         "name": "school",
         "update": false
+    }, {
+        "name": "students",
+        "update": false
     }]
 }

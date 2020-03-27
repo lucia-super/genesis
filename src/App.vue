@@ -10,6 +10,9 @@
             <el-menu-item index="school" @click="linkTo('school')"
               >学校</el-menu-item
             >
+            <el-menu-item index="students" @click="linkTo('students')"
+              >学生</el-menu-item
+            >
           </el-menu-item-group>
         </el-menu>
       </el-aside>
