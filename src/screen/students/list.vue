@@ -1,8 +1,17 @@
 <template>
   <div class="container">
-    <div style="list-style: none; display: flex; margin: 20px">
-      <label>name: </label> <input type="text" :value="conditions.value" />
-      <button type="button" @click="fetchList()">search</button>
+    <div style="list-style: none; display: flex; margin: 20px; width: 300px">
+      <el-input
+        placeholder="请输入搜索值"
+        v-model="conditions.value"
+        class="input-with-select"
+      >
+        <el-button
+          slot="append"
+          icon="el-icon-search"
+          @click="fetchList()"
+        ></el-button>
+      </el-input>
     </div>
 
     <el-table :data="listData" style="width: 100%">
