@@ -33,7 +33,10 @@ export default {
             commit('CHANGE_CURRENT_LOADING', true)
             // TODO api request
             const mockData = {
-                name: "templagte 1 detail"
+                name: "templagte 1 detail",
+                age: 17,
+                address: "address hahahaa",
+                comments: "hahahaa",
             }
             commit('SAVE_CURRENT_DETAIL', mockData)
 
