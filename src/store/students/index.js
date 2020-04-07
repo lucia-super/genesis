@@ -20,8 +20,8 @@ export default {
                 pagination: {
                     size: 10,
                     page: payload.pagination.page,
-                    amount: 20,
-                    totalPages: 3
+                    amount: 3,
+                    totalPages: 1
                 }
             }
             const { result: data, pagination } = mockData
@@ -33,10 +33,37 @@ export default {
             commit('CHANGE_CURRENT_LOADING', true)
             // TODO api request
             const mockData = {
-                name: "templagte 1 detail",
-                age: 17,
-                address: "address hahahaa",
-                comments: "hahahaa",
+                name: "templagte 1 detail"
+            }
+            commit('SAVE_CURRENT_DETAIL', mockData)
+
+            commit('CHANGE_CURRENT_LOADING', false)
+        },
+        createEntry({ commit }) {
+            commit('CHANGE_CURRENT_LOADING', true)
+            // TODO api request
+            const mockData = {
+                name: "templagte 1 detail"
+            }
+            commit('SAVE_CURRENT_DETAIL', mockData)
+
+            commit('CHANGE_CURRENT_LOADING', false)
+        },
+        updateEntry({ commit }) {
+            commit('CHANGE_CURRENT_LOADING', true)
+            // TODO api request
+            const mockData = {
+                name: "templagte 1 detail"
+            }
+            commit('SAVE_CURRENT_DETAIL', mockData)
+
+            commit('CHANGE_CURRENT_LOADING', false)
+        },
+        deleteEntry({ commit }) {
+            commit('CHANGE_CURRENT_LOADING', true)
+            // TODO api request
+            const mockData = {
+                name: "templagte 1 detail"
             }
             commit('SAVE_CURRENT_DETAIL', mockData)
 
