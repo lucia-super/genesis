@@ -34,10 +34,10 @@
   export default {
     name: "App",
     methods: {
-      linkTo(url) {
-        this.$router.push(url);
-      }
-    }
+      linkTo(name) {
+        this.$router.push({ name });
+      },
+    },
   };
 </script>
 
