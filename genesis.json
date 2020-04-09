@@ -7,9 +7,21 @@
     "hardCopyBase": false,
     "modules": [{
         "name": "school",
-        "update": false
+        "update": false,
+        "apis": {
+            "list": "school/list",
+            "detail": "school/detail",
+            "edit": "school/detail",
+            "delete": "school"
+        }
     }, {
         "name": "students",
-        "update": false
+        "update": false,
+        "apis": {
+            "list": "school/list",
+            "get": "school/detail",
+            "edit": "school/detail",
+            "delete": "school"
+        }
     }]
 }
