@@ -18,10 +18,10 @@
         "name": "students",
         "update": false,
         "apis": {
-            "list": "school/list",
-            "get": "school/detail",
-            "edit": "school/detail",
-            "delete": "school"
+            "list": "students/list",
+            "get": "students/detail",
+            "edit": "students/detail",
+            "delete": "students"
         }
     }]
 }
