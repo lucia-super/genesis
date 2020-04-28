@@ -21,11 +21,12 @@ http.createServer(function (request, response) {
             totalPages: 1
         }
     }
+    console(url, JSON.stringify(request));
     switch (url) {
         case "/school/list":
             response.write(JSON.stringify(mockData));
             break
-        case "/school/detail":
+        case "/school/detail/1":
             response.write(JSON.stringify({
                 name: "templagte 1 detail"
             }));
@@ -33,7 +34,7 @@ http.createServer(function (request, response) {
         case "/students/list":
             response.write(JSON.stringify(mockData));
             break
-        case "/students/detail":
+        case "/students/detail/1":
             response.write(JSON.stringify({
                 name: "hello"
             }));
