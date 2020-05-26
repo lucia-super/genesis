@@ -21,7 +21,6 @@ http.createServer(function (request, response) {
             totalPages: 1
         }
     }
-    console(url, JSON.stringify(request));
     switch (url) {
         case "/school/list":
             response.write(JSON.stringify(mockData));
