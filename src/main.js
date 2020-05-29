@@ -3,8 +3,8 @@ import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui';
 
-import routerModules from '@/router'
-import storeModules from '@/store'
+import routerModules from './router'
+import storeModules from './store'
 
 import App from './App.vue'
 

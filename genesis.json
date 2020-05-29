@@ -1,10 +1,9 @@
 {
     "name": "genesis",
     "sourceFolder": "src",
-    "storeFolder": "store",
-    "viewFolder": "screen",
-    "routerFolder": "router",
+    "moduleFolder": "modules",
     "hardCopyBase": false,
+    "update": true,
     "modules": [{
         "name": "school",
         "update": false,
