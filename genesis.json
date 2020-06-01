@@ -2,6 +2,8 @@
     "name": "genesis",
     "sourceFolder": "src",
     "moduleFolder": "modules",
+    "store": "store.js",
+    "router": "router.js",
     "hardCopyBase": false,
     "update": true,
     "modules": [{
