@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Genesis Platform</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <script src="index.js"></script>
+    <header>Genesis</header>
+    <div class="content">
+        <label>All Modules: </label>
+        <table class="table table-striped" id="modulesTable">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Module Name</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNewModule">Add New
+            Module</button>
+
+        <div class="modal fade" id="addNewModule" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            role="dialog" aria-labelledby="addNewModuleLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New Module</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="newData" class="needs-validation" novalidate>
+                            <div class="form-group">
+                                <label for="moduleID">Module ID: </label>
+                                <input type="text" id="moduleID" name="moduleID" class="form-control" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="moduleName">Module Name: </label>
+                                <input type="text" id="moduleName" name="moduleName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="list">List API:</label>
+                                <input type="text" id="list" name="list" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="detail">Detail API:</label>
+                                <input type="text" id="detail" name="detail" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit">Edit API: </label>
+                                <input type="text" id="edit" name="edit" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="delete">Delete API:</label>
+                                <input type="text" id="delete" name="delete" class="form-control" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" onclick="addNewsModule()" class="btn btn-primary">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end dialog -->
+    </div>
+    <footer>genesis tools support.</footer>
+</body>
+
+</html>

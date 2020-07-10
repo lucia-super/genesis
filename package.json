@@ -3,17 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "start": "vue-cli-service serve & node server/index.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "come": "node node_modules/genesis-tools/index.js",
-    "mock-serve": "node server/index.js"
+    "serve": "vue-cli-service serve",
+    "mock-serve": "node server/index.js",
+    "genesis": "node node_modules/genesis-tools/index.js",
+    "config": " node gui/welcome.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "element-ui": "^2.13.0",
-    "genesis-tools": "^0.2.2-beta",
+    "genesis-tools": "^0.2.3-beta",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",
     "vuex": "^3.1.3"

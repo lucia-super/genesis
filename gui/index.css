@@ -1,0 +1,37 @@
+body {
+    display: block;
+    margin: 0;
+}
+
+header {
+    height: 1.875rem;
+    background-color: #3F51B5;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+footer {
+    height: 1.875rem;
+    background-color: #9E9E9E;
+    color: white;
+    align-items: center;
+    text-align: center;
+}
+
+ul {
+    border: 1px solid #FFC107;
+}
+
+li {
+    padding-top: 10px;
+}
+
+li:last-child {
+    padding-bottom: 10px;
+}
+
+.content {
+    padding: 1.875rem;
+}
