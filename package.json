@@ -9,7 +9,7 @@
     "serve": "vue-cli-service serve",
     "mock-serve": "node server/index.js",
     "genesis": "node node_modules/genesis-tools/index.js",
-    "config": " node genesis-ui/welcome.js"
+    "config": " node node_modules/genesis-ui/welcome.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
