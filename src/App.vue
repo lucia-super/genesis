@@ -5,8 +5,11 @@
         <el-menu :default-openeds="['home']">
           <el-menu-item-group>
             <el-menu-item index="home" @click="linkTo('home')">主页</el-menu-item>
-            <el-menu-item index="school" @click="linkTo('school')">学校</el-menu-item>
-            <el-menu-item index="students" @click="linkTo('students')">学生</el-menu-item>
+            <el-menu-item
+              v-for="item in this.modules"
+              :key="item.name"
+              @click="linkTo(item.name)"
+            >{{item.title}}</el-menu-item>
           </el-menu-item-group>
         </el-menu>
       </el-aside>
@@ -25,8 +28,12 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "App",
+  computed: mapState({
+    modules: state => state.modules.modules
+  }),
   methods: {
     linkTo(name) {
       this.$router.push({ name });
